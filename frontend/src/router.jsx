@@ -1,6 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
-import Documents from './routes/Documents.jsx';
 import NotFound from './routes/NotFound.jsx';
+import Documents from './routes/documents.jsx';
 
 function getRoute(route, element) {
     return {
