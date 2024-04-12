@@ -7,7 +7,6 @@ use App\Http\Requests\StoreDocumentRequest;
 use App\Http\Requests\UpdateDocumentRequest;
 use App\Http\Resources\DocumentResource;
 use App\Models\Document as DocumentModel;
-use Illuminate\Auth\Events\Validated;
 
 class DocumentController extends Controller
 {
@@ -28,9 +27,15 @@ class DocumentController extends Controller
      */
     public function store(StoreDocumentRequest $request)
     {
-        $data = $request->validated();
+        $resource = new DocumentResource([
+            'document_name' => $request->input('title'),
+            'content' => $request->input('title'),
+            'field_count' => $request->input('title')
+        ]);
 
-        return new DocumentResource(DocumentModel::create($data));
+        $resource->save();
+
+        return response()->json(['message' => 'Resource created successfully', 'data' => $resource], 200);
     }
 
     /**
