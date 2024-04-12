@@ -16,10 +16,6 @@ class DocumentController extends Controller
      */
     public function index()
     {
-        // return DocumentResource::collection(
-        //     DocumentModel::query()->orderBy('id', 'desc')
-        // );
-
         return response()->json([
             'success' => true,
             'message' => 'Documents fetched successfully',
