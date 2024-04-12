@@ -22,3 +22,5 @@ app/storage/
 public_html/storage
 public_html/hot
 /.vagrant
+frontend/public/vite.svg
+frontend/src/assets/react.svg
